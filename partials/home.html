@@ -1,0 +1,140 @@
+<!-- Site header and primary navigation -->
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home" aria-label="ICWS home">
+        <img src="public/images/logo/abc-chan.png" width="42" height="42" alt="" />
+        <span class="brand-name">ICWS</span>
+      </a>
+      <button class="navbar-toggler menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse site-nav" id="site-nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#abc-chan">ABC-chan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#screenshots">App screens</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="#journey">Explore the journey <span aria-hidden="true">→</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="home">
+  <!-- Product hero -->
+  <section class="hero-section" aria-labelledby="hero-title">
+    <div class="container py-5 py-lg-6">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Indoor wayfinding for college</p>
+          <h1 id="hero-title">Find Your Way<br class="d-none d-xl-block" /> Around Campus.</h1>
+          <p class="hero-lead">Meet ABC-chan, your intelligent indoor navigation assistant. Find rooms, explore facilities and navigate college buildings with confidence.</p>
+          <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
+            <a class="btn btn-primary btn-lg" href="#screenshots">Explore the app <span aria-hidden="true">→</span></a>
+            <a class="btn btn-outline-primary btn-lg" href="#about">Discover ICWS</a>
+          </div>
+          <p class="hero-note mt-4"><span aria-hidden="true">⌖</span> Room to room. Floor to floor. With the next step made clear.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-visual" aria-label="ABC-chan and an ICWS application preview">
+            <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+            <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+            <div class="hero-map-card" aria-hidden="true">
+              <span class="map-building map-building-a">A</span><span class="map-building map-building-b">B</span>
+              <span class="map-route"></span><span class="map-pin map-pin-start">●</span><span class="map-pin map-pin-end">●</span>
+              <span class="map-label map-label-start">You are here</span><span class="map-label map-label-end">Room 204</span>
+            </div>
+            <div class="hero-phone-card">
+              <img src="public/images/screenshots/02-home-screen.png" alt="ICWS app home screen shown inside its complete phone frame" />
+            </div>
+            <div class="assistant-badge">
+              <img src="public/images/logo/abc-chan.png" alt="" />
+              <span><strong>ABC-chan</strong><small>Your route assistant</small></span>
+              <span class="badge-status" aria-label="Ready"></span>
+            </div>
+            <div class="route-hint"><span class="route-hint-icon" aria-hidden="true">↗</span><span><small>Next step</small><strong>Follow the blue route</strong></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bottom container">
+      <span>Designed for students, staff and visitors</span>
+      <a href="#about" class="text-link">See how ICWS helps <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+
+  <!-- Homepage overview and routes into the full product story -->
+  <section class="home-overview py-5 py-lg-6" aria-labelledby="overview-title">
+    <div class="container">
+      <div class="row align-items-end gy-3 mb-4 mb-lg-5">
+        <div class="col-lg-7">
+          <p class="eyebrow">A clearer way through campus</p>
+          <h2 id="overview-title">Every building has a path.<br />ICWS helps you see it.</h2>
+        </div>
+        <div class="col-lg-5"><p class="section-intro mb-0">From the first search to the final turn, ICWS brings destination details, indoor positioning and floor-aware directions together in one guided experience.</p></div>
+      </div>
+      <div class="row g-4 home-pathways">
+        <div class="col-md-4">
+          <a class="pathway-card" href="#features">
+            <span class="pathway-icon" aria-hidden="true">⌕</span>
+            <span class="pathway-kicker">01 / Find</span>
+            <h3>Know where you need to go.</h3>
+            <p>Search classrooms, offices, physical facilities and college services.</p>
+            <span class="pathway-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="pathway-card" href="#journey">
+            <span class="pathway-icon" aria-hidden="true">⌖</span>
+            <span class="pathway-kicker">02 / Navigate</span>
+            <h3>Follow the route, step by step.</h3>
+            <p>Confirm your location and move through the building with floor-aware guidance.</p>
+            <span class="pathway-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="pathway-card" href="#accessibility">
+            <span class="pathway-icon" aria-hidden="true">⇅</span>
+            <span class="pathway-kicker">03 / Choose</span>
+            <h3>Take a route that works for you.</h3>
+            <p>Understand floor changes and choose lifts, stairs or a barrier-free route.</p>
+            <span class="pathway-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="home-cta py-5 py-lg-6" aria-labelledby="home-cta-title">
+    <div class="container">
+      <div class="cta-panel row align-items-center gy-4">
+        <div class="col-lg-8">
+          <p class="eyebrow eyebrow-light">Your next destination starts here</p>
+          <h2 id="home-cta-title">Let ABC-chan guide the way.</h2>
+          <p class="mb-0">Explore the app screens and see how a campus journey can unfold, from search to arrival.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end"><a class="btn btn-light btn-lg" href="#screenshots">View the app journey <span aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container py-4">
+    <div class="row align-items-center gy-3">
+      <div class="col-md-5">
+        <a class="footer-brand" href="#home"><img src="public/images/logo/abc-chan.png" alt="" width="32" height="32" /><span>ICWS <small>Interactive College Wayfinding System</small></span></a>
+      </div>
+      <div class="col-md-7 text-md-end">
+        <nav aria-label="Footer navigation" class="footer-links">
+          <a href="#about">About</a><a href="#screenshots">Application</a><a href="#architecture">Architecture</a><a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom mt-4 pt-3">A college wayfinding project for students, staff and visitors.</div>
+  </div>
+</footer>

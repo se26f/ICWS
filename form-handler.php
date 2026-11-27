@@ -34,11 +34,7 @@ if (!empty($_POST))
 		if(!empty($_POST['username2'])){ 	$message .= "<b>Username:</b> ".$_POST['username2'].'<br />';	}				
 		if(!empty($_POST['password'])){ 	$message .= "<b>Password:</b> ".$_POST['password'].'<br />';	}				
 		if(!empty($_POST['password2'])){ 	$message .= "<b>Password:</b> ".$_POST['password2'].'<br />';	}				
-		if(!empty($_POST['budget'])){ 		$message .= "<b>Budget:</b> ".$_POST['budget'].'<br />';	}				
 		if(!empty($_POST['company_size'])){ $message .= "<b>Company Size:</b> ".$_POST['company_size'].'<br />';	}				
-		if(!empty($_POST['card'])){ 		$message .= "<b>Card Number:</b> ".$_POST['card'].'<br />';	}				
-		if(!empty($_POST['exp'])){ 			$message .= "<b>Expiration date:</b> ".$_POST['exp'].'<br />';	}				
-		if(!empty($_POST['cvv'])){ 			$message .= "<b>CVV:</b> ".$_POST['cvv'].'<br />';	}				
 		if(!empty($_POST['zip'])){ 			$message .= "<b>ZIP code:</b> ".$_POST['zip'].'<br />';	}				
 		if(!empty($_POST['country'])){ 		$message .= "<b>Country:</b> ".$_POST['country'].'<br />';	}				
 		if(!empty($_POST['city'])){ 		$message .= "<b>City:</b> ".$_POST['city'].'<br />';	}				
@@ -47,8 +43,6 @@ if (!empty($_POST))
 		if(!empty($_POST['send_copy'])){ 	$message .= "<b>User checked field:</b> Send me a copy<br />";	}				
 		if(!empty($_POST['remember'])){ 	$message .= "<b>User checked field:</b> Remember me<br />";	}				
 		if(!empty($_POST['rules'])){ 		$message .= "<b>User checked field:</b> I agree to the Terms of Service<br />";	}				
-		if(!empty($_POST['method'])){ 		$message .= "<b>Payment method:</b> ".$_POST['method'].'<br />';	}				
-		if(!empty($_POST['coupon'])){ 		$message .= "<b>Coupon code:</b> ".$_POST['coupon'].'<br />';	}				
 		
 		/* END OF FORM FIELDS */
 		

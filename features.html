@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f7f8f9" />
+    <meta
+      name="description"
+      content="Explore the indoor wayfinding features and accessibility options in ICWS."
+    />
+    <title>Features · ICWS</title>
+    <link rel="icon" href="public/images/logo/abc-chan-small.webp" type="image/webp" />
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/icws.css" rel="stylesheet" />
+    <link href="css/interior.css" rel="stylesheet" />
+    <script src="js/interior.js" defer></script>
+  </head>
+  <body class="icws-site">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <div class="container">
+          <a
+            class="navbar-brand d-flex align-items-center gap-2"
+            href="index.html"
+            ><img
+              src="public/images/logo/abc-chan-small.webp"
+              width="42"
+              height="42"
+              alt=""
+            /><span class="brand-name">ICWS</span></a
+          ><button
+            class="navbar-toggler menu-toggle"
+            type="button"
+            aria-controls="site-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse site-nav" id="site-nav">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="features.html"
+                  >Features</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="app-showcase.html">App Showcase</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="technology.html">Technology</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="interior" id="main-content">
+<section class="feature-exhibit" aria-label="Explore product features">
+        <div class="wrap">
+          <h1 class="ix-label">Features</h1>
+          <article id="destination-search" class="feature-panel">
+            <div class="feature-intro">
+              <h2>Find your <br>destination.</h2>
+              <p class="feature-meta">West-side　 /　 2/F</p>
+              <p>Search classrooms, facilities and campus services. Room details identify the building and floor automatically.</p>
+            </div>
+            <figure><img src="public/images/screenshots/04-room-details.png" width="216" height="424" alt="Classroom W201 with capacity, opening hours and directions" ></figure>
+          </article>
+          <article id="position" class="feature-panel">
+            <div class="feature-intro">
+              <h2>Know where <br>you are.</h2>
+              <p class="feature-meta">Campus Wi-Fi　 /　 1/F</p>
+              <p>Wi-Fi signals would estimate your building, floor and position. Confirm the blue marker or move it to the right corridor.</p>
+            </div>
+            <figure><img src="public/images/screenshots/06-manual-location-adjustment.png" width="227" height="424" alt="Floor plan with a movable starting point" ></figure>
+          </article>
+          <article id="floor-changes" class="feature-panel">
+            <div class="feature-intro">
+              <h2>Take the lift. <br>Or the stairs.</h2>
+              <p class="feature-meta">Floor change　 /　 1/F → 2/F</p>
+              <p>Choose how to change floors before guidance begins. At the landing, confirm the newly detected floor and continue.</p>
+            </div>
+            <figure><img src="public/images/screenshots/07-choose-lift-or-stairs.png" width="226" height="423" alt="ICWS offers a lift or staircase for the route" ></figure>
+          </article>
+
+          <nav class="studio-switch" aria-label="Feature studies"><a href="#destination-search">Room search</a>
+<a href="#position">Location</a>
+<a href="#floor-changes">Floor changes</a></nav>
+        </div>
+      </section>
+      <section class="guidance wrap" id="abc-chan" aria-labelledby="directions">
+        <div class="guidance-copy">
+          <div class="assistant-signature"><img class="assistant-mark" src="public/images/logo/abc-chan.png" width="60" height="60" alt=""><span>ABC-chan</span></div>
+          <h2 id="directions">Know your <br>next turn.</h2>
+          <p>The proposed AI assistant would calculate your route from the indoor map, estimate walking time and distance, and guide you to the door.</p>
+          <a class="ix-link" href="app-showcase.html">Follow the route to W201 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <figure class="route-study">
+          <svg viewBox="0 0 550 250" role="img" aria-label="A corridor route turns right at the lift, then left to reach room W201">
+            <defs><pattern id="map-windows" width="27" height="24" patternUnits="userSpaceOnUse"><path d="M0 5h20" stroke="#c6d4df" stroke-width="3"/></pattern></defs>
+            <g fill="#e6edf3" stroke="#b5c7d3" stroke-width="2"><path d="M-8 5h221v84H-8zM257 5h104v84H257zM369 5h193v84H369zM-6 126h136v140H-6zM138 126h75v140h-75zM257 126h96v139h-96zM360 126h197v138H360z"/>
+            <path d="M10 5v84m65-84v84m70-84v84m-13 39v115M450 126v125" fill="none"/></g>
+            <path d="M0 19h550v16H0zM0 219h550v16H0z" fill="url(#map-windows)"/>
+            <path d="M53 160v-51h181V68h66" fill="none" stroke="#245dc4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="53" cy="160" r="14" fill="#dae6ff"/><circle cx="53" cy="160" r="7" fill="#245dc4" stroke="#fff" stroke-width="2"/>
+            <circle cx="300" cy="68" r="6" fill="#b64b45" stroke="white" stroke-width="2"/>
+            <g font-family="Inter, Arial" font-size="16" font-weight="600" fill="#283e51"><text x="316" y="73">W201</text><text x="26" y="197">Lift</text></g>
+          </svg>
+          <figcaption><span>West-side</span><span>Second floor</span></figcaption>
+        </figure>
+      </section>
+      <div class="campus-pair wrap">
+        <section id="accessibility" class="access-study">
+          <div class="way-sign" aria-hidden="true"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M4 15h4v-4h4V7h5V3h4M3 21l18-11"/></svg></div>
+          <h2>A step-free way.</h2>
+          <p>Wheelchair-friendly routes would use verified ramps, lifts and accessible corridors, avoid stairs and lead to accessible facilities.</p>
+        </section>
+        <section id="access" class="access-study entry-study">
+          <div class="way-sign" aria-hidden="true"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="12" height="14" rx="2"/><path d="M7 16h4m5-11a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg></div>
+          <h2>At the door.</h2>
+          <p>Save route preferences in your profile. At a compatible NFC reader, a college-issued credential could enable authorised entry.</p>
+        </section>
+      </div>
+      <section class="wrap ix-split ix-section">
+        <h2>Common questions</h2>
+        <div>
+          <details class="ix-detail">
+            <summary>Which facilities and services can I look for?</summary>
+            <p>
+              Facilities are places such as the library, cafeteria or accessible
+              toilets. College services include reception, student support and
+              the IT helpdesk.
+            </p>
+          </details>
+          <details class="ix-detail">
+            <summary>Can I choose a route without stairs?</summary>
+            <p>
+              Yes, where the campus has verified a continuous step-free path. A
+              lift or ramp must connect to accessible corridors on both floors.
+            </p>
+          </details>
+          <details class="ix-detail">
+            <summary>Who can use an electronic door?</summary>
+            <p>
+              The access proposal is limited to people with valid college
+              credentials at compatible NFC readers.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>
+          <a class="footer-brand" href="index.html"
+            ><img
+              src="public/images/logo/abc-chan-small.webp"
+              alt=""
+              width="31"
+              height="31"
+            />ICWS</a
+          >
+          <p class="footer-name">Interactive College Wayfinding System</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a
+          ><a aria-current="page" href="features.html">Features</a
+          ><a href="app-showcase.html">App Showcase</a
+          ><a href="technology.html">Technology</a
+          ><a href="about.html">About Us</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="js/icws.js" defer></script>
+  </body>
+</html>
