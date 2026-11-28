@@ -119,6 +119,7 @@
 .signal-page { padding-top: 23px; }
 .system-graph { display: block; width: min(100%, 1080px); margin: clamp(20px, 2.8vw, 36px) auto 0; }
 .diagram-node rect { fill: #182d3d; stroke: #526777; stroke-width: 1; }
+.diagram-start rect { fill: #1d3549; stroke: #7699b6; }
 .diagram-node text { fill: #c1d0dc; font-size: 14px; }
 .diagram-node .node-title { fill: #f1f4f6; font-size: 18px; font-weight: 580; }
 .diagram-edge path { fill: none; stroke: #8fb8e3; stroke-width: 1.7; stroke-linejoin: round; }
