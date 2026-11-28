@@ -13,7 +13,9 @@
     <link href="css/vendor/bootstrap.min.css" rel="stylesheet" />
     <link href="css/icws.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
+    <link href="css/kiosk-home.css" rel="stylesheet" />
     <script src="js/home.js" defer></script>
+    <script src="js/kiosk-home.js" defer></script>
   </head>
   <body class="icws-site">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -131,6 +133,153 @@
           </div>
         </div>
       </section>
+      <section class="kiosk-scene" aria-labelledby="kiosk-product-title">
+        <div class="wrap kiosk-spread">
+          <div class="kiosk-copy">
+            <p class="kiosk-eyebrow">ICWS interactive kiosk</p>
+            <h2 id="kiosk-product-title">Your journey starts at the entrance.</h2>
+            <p>No app required. Meet ABC-chan at the main building entrance, choose your destination and get indoor directions.</p>
+            <p class="kiosk-companion">One navigation system for the shared touchscreen and your phone.</p>
+            <a class="studio-link" href="features.html#kiosk">Try the kiosk demo <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <figure class="kiosk-product">
+            <div class="kiosk-render">
+              <svg class="kiosk-drawing" viewBox="0 0 570 532" role="img" aria-labelledby="kiosk-drawing-title kiosk-drawing-desc">
+                <title id="kiosk-drawing-title">ICWS entrance kiosk concept</title>
+                <desc id="kiosk-drawing-desc">A freestanding kiosk, approximately 180 centimetres tall, with a camera and microphone above the vertical touchscreen, speakers beneath it and a college ID reader on the front. ABC-chan appears alongside an illustrative W606 route, chat, subtitles, language and wheelchair access controls.</desc>
+                <defs>
+                  <linearGradient id="kiosk-wall" x1="0" x2="1" y1="0" y2=".6">
+                    <stop stop-color="#e6edf2"/><stop offset=".54" stop-color="#f6f8f9"/><stop offset="1" stop-color="#f2f5f7"/>
+                  </linearGradient>
+                  <linearGradient id="kiosk-floor" x1="0" x2="0" y1="0" y2="1">
+                    <stop stop-color="#e0e8ed"/><stop offset=".36" stop-color="#eaf0f3"/><stop offset="1" stop-color="#f5f7f8"/>
+                  </linearGradient>
+                  <linearGradient id="kiosk-metal">
+                    <stop stop-color="#aebbc5"/><stop offset=".025" stop-color="#e6edf2"/><stop offset=".17" stop-color="#f5f8fa"/><stop offset=".76" stop-color="#dde5eb"/><stop offset=".97" stop-color="#c1ced8"/><stop offset="1" stop-color="#8f9faa"/>
+                  </linearGradient>
+                  <linearGradient id="kiosk-side">
+                    <stop stop-color="#8c9faa"/><stop offset=".17" stop-color="#a2b2bd"/><stop offset=".84" stop-color="#bdcbd4"/><stop offset="1" stop-color="#8194a2"/>
+                  </linearGradient>
+                  <linearGradient id="kiosk-edge" x1="0" x2="1" y1="0" y2="1">
+                    <stop stop-color="#fafcfd"/><stop offset=".6" stop-color="#b8c6d0"/><stop offset="1" stop-color="#e0e7ec"/>
+                  </linearGradient>
+                  <linearGradient id="kiosk-glass" x1="0" x2="1" y1="0" y2="1">
+                    <stop stop-color="#344651"/><stop offset=".51" stop-color="#1b2832"/><stop offset="1" stop-color="#071017"/>
+                  </linearGradient>
+                  <linearGradient id="kiosk-screen" x1="0" x2="0" y1="0" y2="1">
+                    <stop stop-color="#fcfdfe"/><stop offset="1" stop-color="#e9f0f7"/>
+                  </linearGradient>
+                  <radialGradient id="kiosk-shadow">
+                    <stop stop-color="#233944" stop-opacity=".5"/><stop offset="1" stop-color="#526775" stop-opacity="0"/>
+                  </radialGradient>
+                  <pattern id="kiosk-perforations" width="3" height="3" patternUnits="userSpaceOnUse">
+                    <circle cx="1" cy="1" r=".65" fill="#485b67"/>
+                  </pattern>
+                </defs>
+                <path d="M0 0h570v392H0z" fill="url(#kiosk-wall)"/>
+                <path d="M0 392h570v140H0z" fill="url(#kiosk-floor)"/>
+                <path d="M0 392h570M0 501h570M347 392l156 140M115 392l-65 140" fill="none" stroke="#bdccd6" stroke-opacity=".5"/>
+                <path d="M86 0v392M416 0v392M472 0v392" fill="none" stroke="#c9d5dc" stroke-opacity=".64"/>
+                <path d="M88 0h34v392H88z" fill="#fcfdfe" opacity=".48"/>
+                <path d="M417 0h54v392h-54z" fill="#dde6ec" opacity=".58"/>
+                <ellipse class="kiosk-cast-shadow" cx="313" cy="474" rx="188" ry="40" fill="url(#kiosk-shadow)" transform="rotate(-7 313 474)"/>
+                <g class="kiosk-hardware">
+                  <path d="m169 479 191-13 50-30 6 3v12q0 4-6 7l-42 26-190 14q-12 1-12-8v-7z" fill="#71838e"/>
+                  <path d="m171 476 46-26 180-13q17-2 19 3 2 3-2 6l-49 29-187 15q-12 1-12-5 0-4 5-9Z" fill="url(#kiosk-edge)" stroke="#a5b7c3"/>
+                  <path d="m350 56 36-20q8-2 11 7l5 394q0 8-8 13l-31 18-14-3z" fill="url(#kiosk-side)" stroke="#879ba9"/>
+                  <path d="m189 53 38-23 152-11q14-1 18 11l1 13-37 20z" fill="url(#kiosk-edge)" stroke="#abbcc7"/>
+                  <g transform="translate(185 54) skewY(-4)">
+                    <path d="M11 0h151q14 0 14 14l2 394q0 12-12 12H11Q0 420 0 408L-1 14Q-1 1 11 0Z" fill="url(#kiosk-metal)" stroke="#9aabb6"/>
+                    <path d="M1 16Q1 2 14 2h142" fill="none" stroke="#fff" stroke-opacity=".86"/>
+                    <rect x="7" y="7" width="158" height="257" rx="10" fill="url(#kiosk-glass)" stroke="#60727f"/>
+                    <rect x="13" y="28" width="146" height="224" rx="5" fill="url(#kiosk-screen)" stroke="#0c161d"/>
+                    <path d="M14 9h144" stroke="#8396a4" opacity=".58"/>
+                    <path d="M14 251h144" stroke="#e8f1f8" opacity=".84"/>
+                    <rect x="77" y="13" width="18" height="9" rx="4.5" fill="#101a21" stroke="#425562" stroke-width=".7"/>
+                    <circle cx="86" cy="17.5" r="2.8" fill="#152a3c" stroke="#62788a" stroke-width=".7"/>
+                    <circle cx="86.6" cy="16.9" r=".9" fill="#84aec6"/>
+                    <circle cx="42" cy="18" r="1.15" fill="#a0b0bb"/>
+                    <circle cx="46" cy="18" r="1.15" fill="#a0b0bb"/>
+                    <circle cx="50" cy="18" r="1.15" fill="#a0b0bb"/>
+                    <g font-family="Inter, Arial, sans-serif" fill="#132c40">
+                      <text x="23" y="43" font-size="6.2" font-weight="650">ICWS</text>
+                      <text x="150" y="43" font-size="6.2" text-anchor="end">Mon 23 Nov · 10:42</text>
+                      <path d="M23 49h126" stroke="#d4e0e8"/>
+                      <image href="public/images/logo/abc-chan-small.webp" x="72" y="55" width="29" height="29"/>
+                      <text x="86" y="96" font-size="10.5" text-anchor="middle" font-weight="670">Hello, I’m ABC-chan.</text>
+                      <text x="86" y="107" font-size="6.4" text-anchor="middle" fill="#455c6e">Where would you like to go?</text>
+                      <g class="kiosk-portrait-chat">
+                        <rect x="47" y="114" width="101" height="13" rx="6.5" fill="#d9e9fb"/>
+                        <text x="140" y="123" font-size="6" text-anchor="end">I’d like to go to W606.</text>
+                      </g>
+                      <g>
+                        <rect x="23" y="133" width="126" height="66" rx="4" fill="#f9fbfc" stroke="#d4e0e8"/>
+                        <g fill="#e4ecf3" stroke="#c8d8e4" stroke-width=".6">
+                          <path d="M29 141h28v21H29zM61 141h18v21H61zM83 141h22v21H83zM109 141h35v21h-35zM29 175h24v18H29zM56 175h29v18H56zM89 175h19v18H89zM111 175h33v18h-33z"/>
+                          <path d="M109 141h35v21h-35z" fill="#d5e5f4"/>
+                        </g>
+                        <path class="kiosk-portrait-path" pathLength="1" d="M40 185v-16h85v-15" fill="none" stroke="#245dc4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="40" cy="185" r="3.2" fill="#245dc4" stroke="white" stroke-width="1.2"/>
+                        <path class="kiosk-portrait-pin" d="M125 156q-4-3-4-6a4 4 0 0 1 8 0q0 3-4 6Z" fill="#b84245"/>
+                        <text x="122" y="148" font-size="5.2" text-anchor="end" font-weight="650">W606</text>
+                        <text x="39" y="153" font-size="5.2" text-anchor="middle" font-weight="650">6/F</text>
+                      </g>
+                      <g class="kiosk-portrait-directions">
+                        <rect x="23" y="204" width="126" height="15" rx="3" fill="#253e52"/>
+                        <text x="86" y="214" font-size="6.2" fill="white" text-anchor="middle">Take the lift to 6/F, then turn left.</text>
+                      </g>
+                      <g fill="#f9fbfd" stroke="#c1d2dd" stroke-width=".7">
+                        <rect x="23" y="225" width="27" height="16" rx="3"/>
+                        <rect x="56" y="225" width="27" height="16" rx="3"/>
+                        <rect x="89" y="225" width="27" height="16" rx="3"/>
+                        <rect x="122" y="225" width="27" height="16" rx="3"/>
+                      </g>
+                      <g font-size="6.3" font-weight="610" text-anchor="middle">
+                        <text x="36.5" y="235">EN</text><text x="69.5" y="235">Chat</text><text x="102.5" y="235">Map</text>
+                      </g>
+                      <g stroke="#245dc4" stroke-width=".85" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                        <circle cx="134.8" cy="230" r="1"/>
+                        <path d="M135 232l.7 2h2l1 2m-4-3a2.3 2.3 0 1 0 2.6 2.9"/>
+                      </g>
+                    </g>
+                    <rect x="22" y="278" width="57" height="9" rx="2" fill="url(#kiosk-perforations)"/>
+                    <rect x="106" y="275" width="49" height="28" rx="4" fill="#71838f" stroke="#f4f7f9"/>
+                    <rect x="109" y="278" width="43" height="22" rx="2.7" fill="#344957"/>
+                    <path d="M116 291h28" stroke="#8497a4" stroke-width="1.2"/>
+                    <path d="M116 292h28" stroke="#152631" stroke-width="1"/>
+                    <path d="M124 284h12" stroke="#b8c8d2" stroke-width=".8"/>
+                    <circle cx="146" cy="283" r="1.25" fill="#8dc5ff"/>
+                    <path d="M9 399h158" stroke="#b7c3cb" opacity=".75"/>
+                    <text x="86" y="333" font-family="Inter, Arial, sans-serif" text-anchor="middle" font-size="11" font-weight="630" letter-spacing="1.3" fill="#415765">ICWS</text>
+                    <circle class="kiosk-part-halo kiosk-halo-camera" cx="86" cy="17.5" r="10" />
+                    <path class="kiosk-part-halo kiosk-halo-audio" d="M36 18a10 10 0 1 0 20 0 10 10 0 1 0-20 0ZM18 273h65v19H18z"/>
+                    <rect class="kiosk-part-halo kiosk-halo-reader" x="102" y="272" width="57" height="35" rx="6"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <figcaption class="kiosk-caption">
+              <p><strong>Entrance kiosk concept</strong><span>Approx. 180 cm tall</span></p>
+              <div class="kiosk-parts">
+                <details class="kiosk-part-camera" name="kiosk-hardware">
+                  <summary>Camera</summary>
+                  <p>The camera works alongside the microphone and speakers to enable more natural and interactive conversations with ABC-chan.</p>
+                </details>
+                <details class="kiosk-part-audio" name="kiosk-hardware" open>
+                  <summary>Microphone and speakers</summary>
+                  <p>Visitors could ask for a destination by voice and hear ABC-chan’s directions.</p>
+                </details>
+                <details class="kiosk-part-reader" name="kiosk-hardware">
+                  <summary>College ID reader</summary>
+                  <p>Students and staff could tap a college ID for a personal greeting. Visitors could continue as guests.</p>
+                </details>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="access-scene" aria-labelledby="access-title">
         <div class="wrap access-grid">
           <div class="access-heading"><h2 id="access-title">A route for <br>everyone.</h2><a class="studio-link" href="features.html#accessibility">Explore accessibility <span aria-hidden="true">↗</span></a></div>
@@ -143,7 +292,7 @@
           </div>
         </div>
       </section>
-      <aside class="prototype-note wrap"><strong>About the prototype</strong><p>The screens show a visual prototype. Indoor positioning, route calculation, backend services and NFC access depend on campus deployment.</p></aside>
+      <aside class="prototype-note wrap"><strong>About the prototype</strong><p>The app screens and kiosk show prototypes. Indoor positioning, route calculation, backend services, NFC access and kiosk hardware depend on campus deployment.</p></aside>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">

@@ -13,7 +13,9 @@
     <link href="css/vendor/bootstrap.min.css" rel="stylesheet" />
     <link href="css/icws.css" rel="stylesheet" />
     <link href="css/interior.css" rel="stylesheet" />
+    <link href="css/kiosk-demo.css" rel="stylesheet" />
     <script src="js/interior.js" defer></script>
+    <script src="js/kiosk-demo.js" defer></script>
   </head>
   <body class="icws-site">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -132,6 +134,127 @@
           <p>Save route preferences in your profile. At a compatible NFC reader, a college-issued credential could enable authorised entry.</p>
         </section>
       </div>
+      <section class="kiosk-feature" id="kiosk" aria-labelledby="kiosk-demo-title">
+        <div class="wrap kiosk-demo-grid">
+          <div class="kiosk-demo-copy">
+            <p class="ix-label">ICWS interactive kiosk</p>
+            <h2 id="kiosk-demo-title">Ask ABC-chan.<br>Find your way.</h2>
+            <p>At the main building entrance, ask for a room or pick it on the map. ABC-chan would plan directions from the kiosk’s fixed location.</p>
+            <p class="kiosk-demo-note" id="kiosk-demo-note">Interactive simulation using illustrative destinations and directions.</p>
+          </div>
+          <div class="kiosk-demo-console">
+            <div class="kiosk-demo-bezel">
+              <div class="kiosk-demo-sensor" aria-hidden="true"></div>
+              <div class="kiosk-demo-screen" data-kiosk-demo aria-describedby="kiosk-demo-note">
+                <div class="kiosk-screen-header">
+                  <img src="public/images/logo/abc-chan-small.webp" width="32" height="32" alt="">
+                  <b>ABC-chan</b>
+                  <time data-kiosk-clock></time>
+                </div>
+                <div class="kiosk-screen-content">
+                  <div class="kiosk-conversation" aria-live="polite" aria-atomic="true">
+                    <p class="kiosk-visitor" hidden></p>
+                    <p class="kiosk-reply">Hello! I’m ABC-chan, your campus navigation assistant. Where would you like to go?</p>
+                  </div>
+                  <div class="kiosk-map" id="kiosk-demo-map" data-kiosk-map hidden>
+                    <div class="kiosk-map-header"><b data-kiosk-copy="indoorMap">Indoor map</b><span data-kiosk-copy="illustrative">Illustrative</span></div>
+                    <div class="kiosk-map-plan">
+                      <svg viewBox="0 0 408 126" aria-hidden="true">
+                        <path class="kiosk-map-roof" d="M9 16h390v99H9z"/>
+                        <path class="kiosk-map-rooms" d="M9 16h390v35H9zM72 84h327v31H72z"/>
+                        <path class="kiosk-map-walls" d="M85 16v35m79-35v35m107-35v35m66-35v35M120 84v31m62-31v31m75-31v31m71-31v31M9 51h41m23 0h53m22 0h51m20 0h78m21 0h81M72 84h10m20 0h46m22 0h69m22 0h48m21 0h69"/>
+                        <path class="kiosk-map-ramp" d="M16 75h12v24H16z" hidden/>
+                        <path class="kiosk-map-track" data-kiosk-track pathLength="1"/>
+                        <path class="kiosk-map-route" data-kiosk-route pathLength="1"/>
+                        <circle class="kiosk-map-origin" cx="40" cy="98" r="5"/>
+                        <circle class="kiosk-map-pin" data-kiosk-pin r="6" hidden/>
+                      </svg>
+                      <div class="kiosk-map-choices" aria-label="Choose a destination on the indoor map">
+                        <button type="button" data-kiosk-destination="reception" data-kiosk-copy="reception">Reception</button>
+                        <button type="button" data-kiosk-destination="library" data-kiosk-copy="library">Library</button>
+                        <button type="button" data-kiosk-destination="w606">W606</button>
+                      </div>
+                    </div>
+                    <div class="kiosk-map-footer"><span data-kiosk-copy="entrance">Entrance kiosk</span><b data-kiosk-floor></b></div>
+                    <div class="kiosk-upper-map" data-kiosk-upper hidden>
+                      <div class="kiosk-map-header"><b data-kiosk-copy="sixth">6/F</b><span data-kiosk-copy="liftExit">Lift exit</span><b>W606</b></div>
+                      <svg viewBox="0 0 408 61" aria-hidden="true">
+                        <path class="kiosk-map-roof" d="M9 5h390v50H9z"/>
+                        <path class="kiosk-map-rooms" d="M25 5h108v18H25zM157 5h94v18h-94zM25 42h133v13H25zM187 42h212v13H187z"/>
+                        <path class="kiosk-map-track" d="M335 35H145V16" pathLength="1"/>
+                        <path class="kiosk-map-route" data-kiosk-upper-route d="M335 35H145V16" pathLength="1"/>
+                        <circle class="kiosk-map-origin" cx="335" cy="35" r="5"/>
+                        <circle class="kiosk-map-pin" cx="145" cy="16" r="6"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="kiosk-subtitles" data-kiosk-subtitles hidden></p>
+                </div>
+                <div class="kiosk-control-dock" data-kiosk-controls hidden>
+                  <div class="kiosk-mode-controls">
+                    <button type="button" data-kiosk-map-button aria-controls="kiosk-demo-map" aria-pressed="false"><span data-kiosk-copy="map">Map</span></button>
+                    <button type="button" data-kiosk-wheelchair aria-pressed="false" aria-describedby="kiosk-wheelchair-help"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="1.6"/><path d="m11.5 8 .6 6H17l3 5h2m-10.1-8H17m-7.8 1.2a5 5 0 1 0 6.2 6"/></svg><span data-kiosk-copy="wheelchair">Wheelchair mode</span></button>
+                  </div>
+                  <p class="kiosk-wheelchair-help" id="kiosk-wheelchair-help" data-kiosk-copy="wheelchairHelp">Lowers the controls for easier reach and enables step-free routing.</p>
+                  <form class="kiosk-search" data-kiosk-form novalidate>
+                    <label for="kiosk-destination" data-kiosk-copy="destination">Destination name or room number</label>
+                    <div>
+                      <input type="text" id="kiosk-destination" name="destination" maxlength="120" autocomplete="off" placeholder="e.g. Room W606" aria-describedby="kiosk-destination-error">
+                      <button type="submit" data-kiosk-copy="find">Find route</button>
+                    </div>
+                    <p id="kiosk-destination-error" data-kiosk-error role="status" hidden></p>
+                  </form>
+                  <div class="kiosk-suggestions" data-kiosk-suggestions aria-label="Example destinations">
+                    <button type="button" data-kiosk-destination="w606">W606</button>
+                    <button type="button" data-kiosk-destination="library" data-kiosk-copy="library">Library</button>
+                    <button type="button" data-kiosk-destination="reception" data-kiosk-copy="reception">Reception</button>
+                  </div>
+                  <div class="kiosk-settings">
+                    <label>
+                      <span class="visually-hidden" data-kiosk-copy="language">Language</span>
+                      <select data-kiosk-language><option value="en" lang="en">English</option><option value="zh-Hant" lang="zh-Hant">繁體中文</option></select>
+                    </label>
+                    <button type="button" data-kiosk-captions aria-pressed="false" data-kiosk-copy="subtitles">Subtitles</button>
+                    <button type="button" data-kiosk-listen data-kiosk-copy="listen" hidden>Speak</button>
+                    <button type="button" data-kiosk-restart data-kiosk-copy="restart">Restart</button>
+                  </div>
+                  <p class="kiosk-audio-status" data-kiosk-audio-status role="status" hidden></p>
+                </div>
+                <noscript><p class="kiosk-static-example">Example direction to W606. Take the lift to 6/F, then turn left.</p></noscript>
+              </div>
+              <div class="kiosk-demo-chin" aria-hidden="true"><span></span><span></span></div>
+            </div>
+            <div class="kiosk-demo-foot" aria-hidden="true"></div>
+          </div>
+          <div class="kiosk-demo-details">
+            <dl class="kiosk-access-list">
+              <div><dt>Within reach</dt><dd>Wheelchair mode lowers the touchscreen controls and prioritises step-free routes via lifts, ramps and accessible corridors.</dd></div>
+              <div><dt>Listen or read</dt><dd>The proposed microphone lets you ask for directions. Speakers, on-screen subtitles and language selection offer different ways to follow them.</dd></div>
+              <div><dt>Open to everyone</dt><dd>Visitors can start anonymously. Students and staff can optionally tap a college ID for a personalised greeting.</dd></div>
+            </dl>
+            <a class="ix-link" href="technology.html#kiosk-id">See how college ID would work <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+      <section class="wrap kiosk-comparison" aria-labelledby="kiosk-compare-title">
+        <div>
+          <p class="ix-label">One wayfinding system</p>
+          <h2 id="kiosk-compare-title">Two ways to find your way.</h2>
+          <p>Both interfaces would use ABC-chan, the same indoor maps and the same routing system.</p>
+        </div>
+        <div class="kiosk-comparison-table">
+          <table>
+            <thead><tr><th scope="col">Mobile application</th><th scope="col">Interactive kiosk</th></tr></thead>
+            <tbody>
+              <tr><td>Personal navigation</td><td>Public navigation</td></tr>
+              <tr><td>Throughout campus</td><td>Main building entrance</td></tr>
+              <tr><td>Estimates your location</td><td>Uses a fixed starting location</td></tr>
+              <tr><td>Personal device</td><td>Shared touchscreen</td></tr>
+              <tr><td>Turn-by-turn mobile guidance</td><td>On-screen and spoken directions</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
       <section class="wrap ix-split ix-section">
         <h2>Common questions</h2>
         <div>

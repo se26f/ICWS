@@ -70,26 +70,73 @@
         <p class="ix-label">Technology　 /　 Proposed architecture</p>
         <h1>Behind an indoor route.</h1>
         <nav class="signal-switch" aria-label="Explore system architecture">
-          <a href="#routing">Routing</a><a href="#positioning">Positioning</a><a href="#door">Door access</a>
+          <a href="#routing">Routing</a>
+          <a href="#positioning">Positioning</a>
+          <a href="#kiosk-id">Kiosk ID</a>
+          <a href="#door">Door access</a>
         </nav>
         <article id="routing" class="signal-page">
-          <p class="flow-caption"><b>Route calculation.</b> The route request and campus map meet at the routing engine.</p>
-          <svg class="system-graph" viewBox="0 0 1020 262" aria-hidden="true">
-            <defs><marker id="routing-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1l5 3-5 3" fill="none" stroke="#8fb8e3" stroke-width="1.4"/></marker></defs>
-            <g class="diagram-edge"><path d="M207 54h194" marker-end="url(#routing-arrow)"/><text x="305" y="45" text-anchor="middle">Destination + preferences</text></g>
-<g class="diagram-edge"><path d="M407 89H213" marker-end="url(#routing-arrow)"/><text x="305" y="110" text-anchor="middle">Turn-by-turn response</text></g>
-<g class="diagram-edge"><path d="M612 54h194" marker-end="url(#routing-arrow)"/><text x="712" y="45" text-anchor="middle">Calculate route</text></g>
-<g class="diagram-edge"><path d="M812 89H618" marker-end="url(#routing-arrow)"/><text x="711" y="110" text-anchor="middle">Route and distances</text></g>
-<g class="diagram-edge"><path d="M613 218h300v-106" marker-end="url(#routing-arrow)"/><text x="759" y="204" text-anchor="middle">Map + destination data</text></g>
-            <g class="diagram-node"><rect x="3" y="34" width="204" height="70" rx="9"/><text class="node-title" x="18" y="63">Mobile application</text><text x="18" y="85">ABC-chan · navigation</text></g>
-<g class="diagram-node"><rect x="408" y="34" width="204" height="70" rx="9"/><text class="node-title" x="423" y="63">Backend API</text><text x="423" y="85">Requests and directions</text></g>
-<g class="diagram-node"><rect x="813" y="34" width="204" height="70" rx="9"/><text class="node-title" x="828" y="63">Routing engine</text><text x="828" y="85">Connected indoor paths</text></g>
-<g class="diagram-node"><rect x="408" y="183" width="204" height="70" rx="9"/><text class="node-title" x="423" y="212">Campus database</text><text x="423" y="234">Indoor maps and rooms</text></g>
+          <p class="flow-caption"><b>Shared route calculation.</b> ABC-chan uses the same campus maps whether you start at the entrance kiosk or on your phone.</p>
+          <svg class="system-graph" viewBox="0 0 1020 268" aria-hidden="true">
+            <defs>
+              <marker id="routing-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto-start-reverse">
+                <path d="M1 1l5 3-5 3" fill="none" stroke="#8fb8e3" stroke-width="1.4"/>
+              </marker>
+            </defs>
+            <g class="diagram-edge">
+              <path d="M223 55h28v44h48" marker-start="url(#routing-arrow)" marker-end="url(#routing-arrow)"/>
+              <path d="M223 169h28v-44h48" marker-start="url(#routing-arrow)" marker-end="url(#routing-arrow)"/>
+              <path d="M481 99h70" marker-end="url(#routing-arrow)"/>
+              <path d="M724 99h80" marker-end="url(#routing-arrow)"/>
+              <path d="M552 128h-70" marker-end="url(#routing-arrow)"/>
+              <path d="M805 128h-80" marker-end="url(#routing-arrow)"/>
+              <text x="517" y="90" text-anchor="middle">Request</text>
+              <text x="517" y="148" text-anchor="middle">Directions</text>
+              <text x="765" y="90" text-anchor="middle">Calculate</text>
+              <text x="765" y="148" text-anchor="middle">Route</text>
+              <path d="M914 190v-37" marker-end="url(#routing-arrow)"/>
+              <text x="898" y="177" text-anchor="end">Maps + room data</text>
+            </g>
+            <g class="diagram-node diagram-start">
+              <rect x="3" y="21" width="215" height="68" rx="9"/>
+              <text class="node-title" x="19" y="49">Mobile application</text>
+              <text x="19" y="71">Confirmed Wi-Fi position</text>
+            </g>
+            <g class="diagram-node diagram-start">
+              <rect x="3" y="135" width="215" height="68" rx="9"/>
+              <text class="node-title" x="19" y="163">Interactive kiosk</text>
+              <text x="19" y="185">Fixed main entrance start</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="304" y="77" width="172" height="72" rx="9"/>
+              <text class="node-title" x="319" y="106">ABC-chan</text>
+              <text x="319" y="128">Navigation assistant</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="557" y="77" width="162" height="72" rx="9"/>
+              <text class="node-title" x="572" y="106">Backend API</text>
+              <text x="572" y="128">Route requests</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="810" y="77" width="207" height="72" rx="9"/>
+              <text class="node-title" x="826" y="106">Routing engine</text>
+              <text x="826" y="128">Indoor and step-free paths</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="810" y="195" width="207" height="68" rx="9"/>
+              <text class="node-title" x="826" y="223">Campus database</text>
+              <text x="826" y="245">Indoor maps and rooms</text>
+            </g>
           </svg>
-          <ol class="flow-steps" aria-label="Route calculation."><li><strong>Mobile app → Backend API</strong><span>ABC-chan requests a route using the confirmed start, destination and preferences.</span></li><li><strong>Backend API → Routing engine</strong><span>The API passes the route request.</span></li><li><strong>Campus database → Routing engine</strong><span>Indoor maps provide room locations, paths and accessible floor connections.</span></li><li><strong>Routing engine → API → App</strong><span>ABC-chan presents the returned route, turns and walking distance.</span></li></ol>
+          <ol class="flow-steps" aria-label="Shared route calculation">
+            <li><strong>Mobile app or kiosk → ABC-chan</strong><span>The traveller confirms a Wi-Fi position estimate in the app. The kiosk uses its fixed location at the main entrance.</span></li>
+            <li><strong>ABC-chan → Backend API → Routing engine</strong><span>ABC-chan sends the start, destination and route preferences to the same API and routing engine from either interface.</span></li>
+            <li><strong>Campus database → Routing engine</strong><span>Indoor maps supply rooms, paths and accessible connections.</span></li>
+            <li><strong>Routing engine → API → ABC-chan</strong><span>The app gives turn-by-turn guidance. The kiosk presents directions on screen and through its speakers.</span></li>
+          </ol>
         </article>
         <article id="positioning" class="signal-page">
-          <p class="flow-caption"><b>Indoor positioning.</b> The app asks the traveller to confirm the estimated floor and start point.</p>
+          <p class="flow-caption"><b>Indoor positioning.</b> The mobile app estimates the traveller’s floor and starting point from Wi-Fi. The entrance kiosk uses its configured position.</p>
           <svg class="system-graph" viewBox="0 0 1020 262" aria-hidden="true">
             <defs><marker id="positioning-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1l5 3-5 3" fill="none" stroke="#8fb8e3" stroke-width="1.4"/></marker></defs>
             <g class="diagram-edge"><path d="M208 131h195" marker-end="url(#positioning-arrow)"/><text x="306" y="113" text-anchor="middle">Signal measurements</text></g>
@@ -99,6 +146,41 @@
 <g class="diagram-node"><rect x="813" y="96" width="204" height="70" rx="9"/><text class="node-title" x="828" y="125">Backend API → App</text><text x="828" y="147">Traveller confirmation</text></g>
           </svg>
           <ol class="flow-steps" aria-label="Indoor positioning."><li><strong>Wi-Fi access points → Indoor positioning</strong><span>Campus signal measurements support a building, floor and position estimate.</span></li><li><strong>Indoor positioning → Backend API</strong><span>The position estimate becomes a suggested starting point.</span></li><li><strong>Backend API → Mobile app</strong><span>The traveller confirms or corrects the marker before routing.</span></li></ol>
+        </article>
+        <article id="kiosk-id" class="signal-page">
+          <p class="flow-caption"><b>Optional kiosk identification.</b> A college ID tap could personalise the greeting. Visitors can start as guests. A separate NFC reader handles door access.</p>
+          <svg class="system-graph" viewBox="0 0 1020 262" aria-hidden="true">
+            <defs>
+              <marker id="kiosk-id-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M1 1l5 3-5 3" fill="none" stroke="#8fb8e3" stroke-width="1.4"/>
+              </marker>
+            </defs>
+            <g class="diagram-edge">
+              <path d="M208 131h195" marker-end="url(#kiosk-id-arrow)"/>
+              <text x="306" y="113" text-anchor="middle">Optional ID tap</text>
+              <path d="M613 131h195" marker-end="url(#kiosk-id-arrow)"/>
+              <text x="712" y="113" text-anchor="middle">Greeting context</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="3" y="96" width="204" height="70" rx="9"/>
+              <text class="node-title" x="18" y="125">College ID reader</text>
+              <text x="18" y="147">Student and staff cards</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="408" y="96" width="204" height="70" rx="9"/>
+              <text class="node-title" x="423" y="125">Interactive kiosk</text>
+              <text x="423" y="147">Guest or identified session</text>
+            </g>
+            <g class="diagram-node">
+              <rect x="813" y="96" width="204" height="70" rx="9"/>
+              <text class="node-title" x="828" y="125">ABC-chan</text>
+              <text x="828" y="147">Personalised greeting</text>
+            </g>
+          </svg>
+          <ol class="flow-steps" aria-label="Optional kiosk identification">
+            <li><strong>College ID reader → Kiosk</strong><span>Students and staff could identify themselves with a compatible college ID. Guests can use the kiosk anonymously.</span></li>
+            <li><strong>Kiosk → ABC-chan</strong><span>The assistant could greet identified users. Both session types use the same entrance start and route services.</span></li>
+          </ol>
         </article>
         <article id="door" class="signal-page">
           <p class="flow-caption"><b>Authorised door access.</b> The college access system makes a separate decision at the door.</p>
@@ -136,6 +218,14 @@
             <p>
               Routes need current floor plans, connected paths, room records and
               verified details for lifts, ramps and accessible entrances.
+            </p>
+          </details>
+          <details class="ix-detail">
+            <summary>Kiosk installation and college IDs</summary>
+            <p>
+              The kiosk would use the surveyed entrance position as its route origin.
+              Personalised greetings would require a compatible card reader and college-approved
+              identity handling. The NFC readers at electronic doors handle access permissions.
             </p>
           </details>
           <details class="ix-detail">

@@ -18,6 +18,15 @@ ICWS is an indoor wayfinding application for college students, staff, and visito
 - Access room information.
 - Use NFC-compatible electronic doors where authorised.
 
+### Interactive campus kiosk
+
+ICWS also includes a proposed freestanding touchscreen kiosk at the main building entrance. Students, staff and visitors can ask ABC-chan for directions without installing the app. The kiosk routes from its predefined installation point. Visitors can use it anonymously, and students and staff may optionally present a college ID for a personalised greeting. The kiosk’s ID card reader and the NFC electronic door access system have distinct roles.
+
+- Home introduces the kiosk as a complementary ICWS interface with a realistic hardware presentation based on the original concept when available. Depict the approximately 180 cm enclosure, vertical screen, ABC mark, camera, microphone, speakers, college ID reader, accessibility and language controls, chat, map, subtitles, date and time. The camera purpose remains unspecified.
+- Features compares the kiosk and mobile app and includes a labelled frontend simulation for text search, sample destinations, map selection, route visualisation, language selection, subtitles, restart and optional browser speech. The illustrative W606 route uses the lift to 6/F and turns left. Simulated directions do not establish actual campus routes.
+- Describe the proposed hands-free microphone input and spoken directions. Wheelchair mode lowers the touchscreen controls within the same layout and routes via the lift when changing floors. Briefly explain the mode below its toggle and keep all map labels and destination controls available. Keep the demo keyboard accessible and usable with reduced motion. Hardware permissions and a live backend are unnecessary for the website demo.
+- Technology shows the two frontends sharing ABC-chan, the backend API, indoor maps and routing. Mobile positioning estimates a starting point from Wi-Fi signals. The kiosk uses a predefined starting location. Present all physical integrations as proposed.
+
 ### ABC-chan identity
 
 ABC-chan is the AI assistant that makes the routes. The ABC logo represents ABC-chan and is a core part of the application's identity.
@@ -67,10 +76,10 @@ Keep the existing static Bootstrap five-page implementation. Serve Bootstrap CSS
 
 Build exactly five primary website pages. Do not restore the previous ten-page structure or place all information on the homepage:
 
-- `index.html` — Home, including ABC-chan branding and introduction.
-- `features.html` — Product features and accessibility information, with ABC-chan in the feature context.
+- `index.html` — Home, including ABC-chan branding, the mobile introduction and the kiosk hardware presentation.
+- `features.html` — Product features and accessibility information, including ABC-chan, the kiosk simulation and the interface comparison.
 - `app-showcase.html` — All 13 screenshots plus the complete interactive navigation journey.
-- `technology.html` — System architecture, technology/integration explanation, scope, and limitations.
+- `technology.html` — Shared mobile and kiosk architecture, technology and integration explanation, scope, and limitations.
 - `about.html` — About Us: project background, objectives, stakeholders, proposed benefits, three team placeholders, and contact/feedback form.
 
 Merge ABC-chan into Home and Features; merge accessibility into Features; merge How It Works into App Showcase; merge project information, team members, and contact into About Us. Avoid duplicate standalone pages for these topics.
@@ -284,6 +293,7 @@ Before declaring completion, the lead agent must integrate and review the whole 
 - Test all links.
 - Test the screenshot gallery.
 - Check all 13 images.
+- Test kiosk hardware annotations, destination search and map selection, wheelchair control reach, translated copy, subtitles, restart and the optional browser speech control. Verify both starting points and the separate college ID and door-access flows.
 - Check mobile and desktop layouts.
 - Check image proportions and confirm no screenshot phone is cropped.
 - Check console errors.
