@@ -193,8 +193,9 @@
                 <div class="kiosk-control-dock" data-kiosk-controls hidden>
                   <div class="kiosk-mode-controls">
                     <button type="button" data-kiosk-map-button aria-controls="kiosk-demo-map" aria-pressed="false"><span data-kiosk-copy="map">Map</span></button>
-                    <button type="button" data-kiosk-wheelchair aria-pressed="false"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="1.6"/><path d="m11.5 8 .6 6H17l3 5h2m-10.1-8H17m-7.8 1.2a5 5 0 1 0 6.2 6"/></svg><span data-kiosk-copy="wheelchair">Wheelchair mode</span></button>
+                    <button type="button" data-kiosk-wheelchair aria-pressed="false" aria-describedby="kiosk-wheelchair-help"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4" r="1.6"/><path d="m11.5 8 .6 6H17l3 5h2m-10.1-8H17m-7.8 1.2a5 5 0 1 0 6.2 6"/></svg><span data-kiosk-copy="wheelchair">Wheelchair mode</span></button>
                   </div>
+                  <p class="kiosk-wheelchair-help" id="kiosk-wheelchair-help" data-kiosk-copy="wheelchairHelp">Lowers the controls for easier reach and enables step-free routing.</p>
                   <form class="kiosk-search" data-kiosk-form novalidate>
                     <label for="kiosk-destination" data-kiosk-copy="destination">Destination name or room number</label>
                     <div>

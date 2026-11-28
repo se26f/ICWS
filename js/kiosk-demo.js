@@ -6,7 +6,8 @@ if (kioskDemo) {
       greeting: 'Hello! I’m ABC-chan, your campus navigation assistant. Where would you like to go?',
       map: 'Map', indoorMap: 'Indoor map', illustrative: 'Illustrative', entrance: 'Entrance kiosk',
       ground: 'Entrance level', sixth: '6/F', lift: 'Lift to 6/F', liftExit: 'From the lift', stepFree: 'Step-free route',
-      wheelchair: 'Wheelchair mode', destination: 'Destination name or room number',
+      wheelchair: 'Wheelchair mode', wheelchairHelp: 'Lowers the controls for easier reach and enables step-free routing.',
+      destination: 'Destination name or room number',
       placeholder: 'e.g. Room W606', find: 'Find route', library: 'Library', reception: 'Reception',
       language: 'Language', subtitles: 'Subtitles', listen: 'Speak', restart: 'Restart',
       mapChoices: 'Choose a destination on the indoor map', suggestions: 'Example destinations',
@@ -25,7 +26,8 @@ if (kioskDemo) {
       greeting: '你好！我是校園導航助手 ABC-chan。請問你想去哪裡？',
       map: '地圖', indoorMap: '室內地圖', illustrative: '路線示意', entrance: '入口導覽站',
       ground: '入口樓層', sixth: '六樓', lift: '乘升降機往六樓', liftExit: '從升降機出發', stepFree: '無障礙路線',
-      wheelchair: '輪椅模式', destination: '目的地名稱或房間編號',
+      wheelchair: '輪椅模式', wheelchairHelp: '降低控制介面，方便觸及，並啟用無梯級路線。',
+      destination: '目的地名稱或房間編號',
       placeholder: '例如：W606 室', find: '尋找路線', library: '圖書館', reception: '接待處',
       language: '語言', subtitles: '字幕', listen: '朗讀', restart: '重新開始',
       mapChoices: '在室內地圖上選擇目的地', suggestions: '示範目的地',
@@ -99,7 +101,7 @@ if (kioskDemo) {
     const text = textFor();
     map.hidden = !state.mapOpen;
     mapButton.setAttribute('aria-pressed', String(state.mapOpen));
-    mapChoices.hidden = Boolean(destination) || state.accessible;
+    mapChoices.hidden = Boolean(destination) && !state.accessible;
     upperMap.hidden = state.key !== 'w606';
     pin.toggleAttribute('hidden', !destination);
     pin.classList.toggle('is-transfer', state.key === 'w606');
@@ -195,7 +197,7 @@ if (kioskDemo) {
     const key = button.dataset.kioskDestination;
     const destination = destinations[key];
     input.value = textFor()[destination.name] || destination.name;
-    if (mapChoices.contains(button)) mapButton.focus({ preventScroll: true });
+    if (mapChoices.contains(button) && !state.accessible) mapButton.focus({ preventScroll: true });
     showDestination(key);
   });
 

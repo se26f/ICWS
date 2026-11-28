@@ -107,6 +107,7 @@
   transition: margin-top .32s ease, padding-bottom .32s ease;
 }
 .kiosk-demo-screen.is-wheelchair .kiosk-control-dock { margin-top: 48px; padding-bottom: 10px; }
+.kiosk-demo-screen .kiosk-wheelchair-help { margin-top: 5px; color: #405566; font-size: .78rem; }
 .kiosk-mode-controls, .kiosk-suggestions, .kiosk-settings {
   display: flex;
   flex-wrap: wrap;
