@@ -6,18 +6,21 @@
 .kiosk-demo-grid {
   display: grid;
   grid-template-columns: 1fr minmax(0, 1.12fr);
-  align-items: center;
-  gap: clamp(24px, 7vw, 100px);
+  grid-template-areas: "copy console" "details console";
+  grid-template-rows: 1fr 1fr;
+  column-gap: clamp(24px, 7vw, 100px);
 }
-.kiosk-demo-intro .ix-label, .kiosk-comparison .ix-label { margin-bottom: 14px; }
-.kiosk-demo-intro > p:not(.ix-label), .kiosk-comparison > div > p:last-child { margin-top: 16px; max-width: 41ch; }
+.kiosk-demo-copy { grid-area: copy; align-self: end; }
+.kiosk-demo-details { grid-area: details; align-self: start; }
+.kiosk-demo-copy .ix-label, .kiosk-comparison .ix-label { margin-bottom: 14px; }
+.kiosk-demo-copy > p:not(.ix-label), .kiosk-comparison > div > p:last-child { margin-top: 16px; max-width: 41ch; }
 .kiosk-demo-note { color: #41596b; font-size: .87rem; }
 .kiosk-access-list { margin: 27px 0 0; max-width: 47ch; }
 .kiosk-access-list div { border-top: 1px solid #bfcdd7; padding-block: 11px; }
 .kiosk-access-list dt { font-size: .95rem; font-weight: 650; }
 .kiosk-access-list dd { font-size: .91rem; color: #3f5364; margin-top: 4px; }
-.kiosk-demo-intro .ix-link { margin-top: 5px; }
-.kiosk-demo-console { max-width: 570px; width: 100%; margin-inline: auto; }
+.kiosk-demo-details .ix-link { margin-top: 5px; }
+.kiosk-demo-console { grid-area: console; align-self: center; max-width: 570px; width: 100%; margin-inline: auto; }
 .kiosk-demo-bezel {
   position: relative;
   isolation: isolate;
@@ -141,6 +144,12 @@
 
 @media (max-width: 790px) {
   .kiosk-demo-grid, .kiosk-comparison { grid-template-columns: 1fr; }
+  .kiosk-demo-grid {
+    grid-template-areas: "copy" "console" "details";
+    grid-template-rows: auto;
+    row-gap: 24px;
+  }
+  .kiosk-access-list { margin-top: 6px; }
 }
 @media (max-width: 420px) {
   .kiosk-demo-screen button, .kiosk-demo-screen select { padding-inline: 7px; }
@@ -149,3 +158,7 @@
   .kiosk-control-dock { transition: none; }
   .kiosk-map.animate-route .kiosk-map-route, .kiosk-conversation.is-speaking p { animation: none; }
 }
+
+.kiosk-map-ramp { fill: #d3e3ed; stroke: #9db2c2; stroke-width: .6; }
+.kiosk-map-pin.is-transfer { fill: #fff; stroke: var(--blue); stroke-width: 2.5; }
+.kiosk-audio-status { padding-top: 6px; color: #41596b; font-size: .78rem; }

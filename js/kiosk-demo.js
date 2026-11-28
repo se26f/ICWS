@@ -5,7 +5,7 @@ if (kioskDemo) {
     en: {
       greeting: 'Hello! I’m ABC-chan, your campus navigation assistant. Where would you like to go?',
       map: 'Map', indoorMap: 'Indoor map', illustrative: 'Illustrative', entrance: 'Entrance kiosk',
-      ground: 'Entrance level', sixth: '6/F', lift: 'Lift to 6/F', stepFree: 'Step-free route',
+      ground: 'Entrance level', sixth: '6/F', lift: 'Lift to 6/F', liftExit: 'From the lift', stepFree: 'Step-free route',
       wheelchair: 'Wheelchair mode', destination: 'Destination name or room number',
       placeholder: 'e.g. Room W606', find: 'Find route', library: 'Library', reception: 'Reception',
       language: 'Language', subtitles: 'Subtitles', listen: 'Speak', restart: 'Restart',
@@ -24,7 +24,7 @@ if (kioskDemo) {
     'zh-Hant': {
       greeting: '你好！我是校園導航助手 ABC-chan。請問你想去哪裡？',
       map: '地圖', indoorMap: '室內地圖', illustrative: '路線示意', entrance: '入口導覽站',
-      ground: '入口樓層', sixth: '六樓', lift: '乘升降機往六樓', stepFree: '無障礙路線',
+      ground: '入口樓層', sixth: '六樓', lift: '乘升降機往六樓', liftExit: '從升降機出發', stepFree: '無障礙路線',
       wheelchair: '輪椅模式', destination: '目的地名稱或房間編號',
       placeholder: '例如：W606 室', find: '尋找路線', library: '圖書館', reception: '接待處',
       language: '語言', subtitles: '字幕', listen: '朗讀', restart: '重新開始',
@@ -42,7 +42,7 @@ if (kioskDemo) {
     }
   };
   const destinations = {
-    w606: { match: /\bw\s*[-–]?\s*606\b/i, name: 'W606', reply: 'w606', pin: [308, 32] },
+    w606: { match: /\b(?:w\s*[-–]?\s*606|606)\b/i, name: 'W606', reply: 'w606', pin: [308, 32] },
     library: { match: /\blibrary\b|圖書館|图书馆/i, name: 'library', reply: 'libraryRoute', pin: [159, 100] },
     reception: { match: /\breception\b|接待處|接待处/i, name: 'reception', reply: 'receptionRoute', pin: [61, 33] }
   };
@@ -57,6 +57,7 @@ if (kioskDemo) {
   const route = choose('[data-kiosk-route]');
   const track = choose('[data-kiosk-track]');
   const pin = choose('[data-kiosk-pin]');
+  const ramp = choose('.kiosk-map-ramp');
   const upperMap = choose('[data-kiosk-upper]');
   const floor = choose('[data-kiosk-floor]');
   const wheelchair = choose('[data-kiosk-wheelchair]');
@@ -101,6 +102,8 @@ if (kioskDemo) {
     mapChoices.hidden = Boolean(destination) || state.accessible;
     upperMap.hidden = state.key !== 'w606';
     pin.toggleAttribute('hidden', !destination);
+    pin.classList.toggle('is-transfer', state.key === 'w606');
+    ramp.toggleAttribute('hidden', !state.accessible);
     floor.textContent = [
       state.key === 'w606' ? text.lift : text.ground,
       state.accessible ? text.stepFree : ''
@@ -145,6 +148,7 @@ if (kioskDemo) {
   function stopSpeech() {
     if (speech) speech.cancel();
     audioStatus.textContent = '';
+    audioStatus.hidden = true;
   }
 
   function showDestination(key) {
@@ -173,7 +177,7 @@ if (kioskDemo) {
 
   form.addEventListener('submit', event => {
     event.preventDefault();
-    const value = input.value.trim();
+    const value = input.value.normalize('NFKC').trim();
     const key = Object.keys(destinations).find(id => destinations[id].match.test(value));
     if (key) {
       showDestination(key);
@@ -239,6 +243,7 @@ if (kioskDemo) {
       utterance.lang = language.value === 'en' ? 'en-GB' : 'zh-HK';
       utterance.onerror = event => {
         if (event.error !== 'canceled' && event.error !== 'interrupted') {
+          audioStatus.hidden = false;
           audioStatus.textContent = textFor().speechUnavailable;
         }
       };
